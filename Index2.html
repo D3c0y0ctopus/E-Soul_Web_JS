@@ -13,11 +13,27 @@
       color: white;
     }
 
-    
-    .container {
-      display: flex;
+
+    h2 {
+      font-family: "Helvetica", sans-serif;
+      text-align: center;
+      color: white;
     }
 
+
+    /*THE MAIN CONTAINER FOR EVERYTHING*/
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      /*DELETE THIS*/
+      padding: 50px; 
+    }
+    
+    
+
+     /*THE INNER CONTAINER FOR THE BARS*/
     .bars-container {
       
       color: white;
@@ -28,13 +44,20 @@
 
     .bar {
       width: 5px;
-      height: 50px;
+      height: 60px;
       background-color: white;
       border-radius: 5px;
       margin: 5px;
       animation-name: animate;
       animation-duration: 1s;
       animation-iteration-count: infinite;
+    }
+
+    #coordinates{
+      font-family: "Helvetica", sans-serif;
+      color: white;
+      text-align: center;
+      size: 13px;
     }
 
     @keyframes animate {
@@ -52,9 +75,9 @@
 </head>
 <body>
 
-  <h1>Animated Bars</h1>
 
-  <div class="container">
+  <div class="flex-container">
+    <h1>Animated Bars</h1>
   <div class="bars-container">
     <div class="bar"></div>
     <div class="bar"></div>
@@ -97,14 +120,21 @@
     <div class="bar"></div>
     <div class="bar"></div>
   </div>
+
+   <!-- THIS IS THE MOUSE CO-ORDINATES DIV-->
+    <div id="coordinates">(0, 0)</div>
+
+
   </div>
+  </div>
+  
 
   <script>
     const bars = document.querySelectorAll(".bar");
 
 function randomizeAnimation() {
   bars.forEach((bar) => {
-    const height = Math.floor(Math.random() * 100) + 50;
+    const height = Math.floor(Math.random() * 80) + 10;
     const duration = Math.floor(Math.random() * 3) + 1;
     const delay = Math.floor(Math.random() * 3) + 1;
     const timingFunction = Math.random() < 0.5 ? "ease-in" : "ease-out";
@@ -116,6 +146,15 @@ function randomizeAnimation() {
 }
 
 randomizeAnimation();
+
+/*THIS IS THE MOUSE CO-ORDINATES SCRIPT*/
+
+document.addEventListener("mousemove", (event) => {
+      const x = event.clientX;
+      const y = event.clientY;
+      document.querySelector("#coordinates").innerHTML = `${x}, ${y}`;
+    });
+
   </script>
 </body>
 </html>
