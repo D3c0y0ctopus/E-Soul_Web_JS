@@ -5,12 +5,12 @@
 
     body {
     background-color: #2c5cc3;
-    margin: 50px;
+    margin: 90px;
     }
 
     h1 {
       font-family: "Helvetica", sans-serif;
-      text-align: center;
+      text-align: match-parent;
       color: white;
     }
 
@@ -26,9 +26,9 @@
     .flex-container {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
+      align-items: flex-end; 
       justify-content: space-evenly;
-    
+      gap: 16px;
       
     }
     
@@ -59,6 +59,7 @@
       color: white;
       text-align: center;
       size: 13px;
+      margin: 0 auto;
     }
 
     @keyframes animate {
@@ -78,7 +79,7 @@
 
 
   <div class="flex-container">
-    <h1>Animated Bars</h1>
+    <h1>E-Soul</h1>
   <div class="bars-container">
     <div class="bar"></div>
     <div class="bar"></div>
@@ -148,7 +149,7 @@ function randomizeAnimation() {
 
 randomizeAnimation();
 
-/*THIS IS THE MOUSE CO-ORDINATES SCRIPT*/
+/*MOUSE CO-ORDINATES*/
 
 document.addEventListener("mousemove", (event) => {
       const x = event.clientX;
