@@ -74,6 +74,35 @@
         height: 50px;
       }
     }
+
+
+    #hazard-sign {
+  width: 50px;
+  height: 50px;
+  
+
+  margin: 0;
+  perspective: 1000px;
+}
+
+.circle {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background-color: #f8a020;
+  transform-style: flat;
+  animation: spin 1s linear infinite;
+
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
   </style>
 </head>
 <body>
@@ -122,10 +151,29 @@
     <div class="bar"></div>
     <div class="bar"></div>
     <div class="bar"></div>
+
+<!-- HAZARD SIGN-->
+    <div id="hazard-sign">
+      <div class="circle"></div>
+    </div>
+
+    <div id="hazard-sign">
+      <div class="circle"></div>
+    </div>
+
+    <div id="hazard-sign">
+      <div class="circle"></div>
+    </div>
+
   </div>
 
-   <!-- THIS IS THE MOUSE CO-ORDINATES DIV-->
-    <div id="coordinates">(0, 0)</div>
+  
+ 
+
+   <!-- MOUSE CO-ORDINATES DIV-->
+    <div id="coordinates">(0, 0)
+
+    </div>
 
 
   </div>
@@ -160,8 +208,15 @@ document.addEventListener("mousemove", (event) => {
     });
 
 
+ /*HAZARD SIGN*/
+    const hazardSign = document.getElementById('hazard-sign');
 
+    hazardSign.addEventListener('mouseover', () => {
+    hazardSign.classList.add('hover');});
 
+    hazardSign.addEventListener('mouseout', () => {
+    hazardSign.classList.remove('hover');
+  });
 
     
 
